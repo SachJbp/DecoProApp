@@ -1,0 +1,44 @@
+
+<html>
+<style>
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+</style>
+
+<head>
+<title>
+DecoPro Demand Prediction and Inventory Replenishment
+</title>
+</head>
+<div class="container">
+<body>
+<center><p ><font size = "6">Upload the sellercloud file to get Demand predictions and Ordering schedule </font></p>
+      <form action="{{ url_for('upload_file')}}" method="POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file1" />
+          <input type = "file" name = "file2" />
+         <input type = "submit"/>
+      </form>   
+    </center>
+    
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+   </body>
+</br>
+</br>
+</br>
+</br>
+
+
+</div>
+
+
+</html>
